@@ -27,7 +27,7 @@ kernels with ACPI support.
 
 %description -l pl
 Kacpi to program monitoruj±cy temperaturê CPU oraz stan baterii
-laptopa, przeznaczony dla j±der zawierajacych obs³ugê ACPI. Cechy:
+laptopa, przeznaczony dla j±der zawieraj±cych obs³ugê ACPI. Cechy:
 - status baterii aktualizowany co 5 minut lub za naci¶niêciem
   przycisku;
 - informowanie o niskim stanie baterii co 12-15 minut i ponownie

@@ -7,6 +7,7 @@ License:	GPL
 Vendor:		Jonas Genannt <jonasge@gmx.net>
 Group:		X11/Applications
 Source0:	http://www.elektronikschule.de/~genannt/kacpi/download/%{name}-%{version}.tar.bz2
+# Source0-md5:	7b5e21bb01b4b6d1b1ef849395a67bd2
 URL:		http://www.elektronikschule.de/~genannt/kacpi/
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	kernel >= 2.4

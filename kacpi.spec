@@ -2,7 +2,7 @@ Summary:	Kacpi is a laptop battery and CPU temperature monitor
 Summary(pl):	Kacpi to program monitoruj±cy temperaturê CPU oraz stan baterii laptopa
 Name:		kacpi
 Version:	0.6.3e
-Release:	2
+Release:	3
 License:	GPL
 Vendor:		Jonas Genannt <jonasge@gmx.net>
 Group:		X11/Applications
@@ -11,7 +11,6 @@ Source0:	http://www.elektronikschule.de/~genannt/kacpi/download/%{name}-%{versio
 URL:		http://www.elektronikschule.de/~genannt/kacpi/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.0
-BuildRequires:	kernel >= 2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
@@ -37,10 +36,14 @@ laptopa, przeznaczony dla j±der zawierajacych obs³ugê ACPI. Cechy:
 %prep
 %setup -q
 
+echo 'Categories=System;Monitor;' >> kacpi/kacpi.desktop
+
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
+# no icon themes, *.png installed directly to icondir - so use pixmapsdir
+kde_icondir="%{_pixmapsdir}"; export kde_icondir
 cp -f /usr/share/automake/config.* admin
-%configure2_13
+%configure
 
 %{__make}
 
@@ -48,7 +51,8 @@ cp -f /usr/share/automake/config.* admin
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	desktopdir=%{_desktopdir}
 
 %find_lang %{name} --with-kde
 

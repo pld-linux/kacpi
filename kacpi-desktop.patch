@@ -1,0 +1,17 @@
+--- kacpi-0.6.3e/kacpi/kacpi.desktop~	Wed Jul 28 00:31:53 2004
++++ kacpi-0.6.3e/kacpi/kacpi.desktop	Wed Jul 28 00:33:13 2004
+@@ -1,9 +1,10 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Name=kacpi
+-Name[es]=
+-Name[ven]=
+-Name[xx]=xx
++Comment=Battery and CPU temperature monitor
++Comment[pl]=Program monitorujący temperaturę CPU i stan baterii
+ Exec=kacpi %i %m -caption "%c"
+ Type=Application
+-Terminal=0
++Terminal=false
++Categories=Qt;KDE;System;Monitor;
++# vi: encoding=utf-8

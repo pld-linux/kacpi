@@ -9,6 +9,7 @@ Group:		X11/Applications
 Source0:	http://www.elektronikschule.de/~genannt/kacpi/download/%{name}-%{version}.tar.bz2
 # Source0-md5:	4fca455edd54b9178711de04ffc8da12
 URL:		http://www.elektronikschule.de/~genannt/kacpi/
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	kernel >= 2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,10 +38,8 @@ laptopa, przeznaczony dla j±der zawierajacych obs³ugê ACPI. Cechy:
 %setup -q
 
 %build
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
-
+cp -f /usr/share/automake/config.* admin
 %configure2_13
 
 %{__make}
@@ -60,5 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README AUTHORS
 %attr(755,root,root) %{_bindir}/*
-%{_pixmapsdir}/*
-%{_applnkdir}/Utilities/*
+%{_pixmapsdir}/*.png
+%{_desktopdir}/*.desktop

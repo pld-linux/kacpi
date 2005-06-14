@@ -11,6 +11,7 @@ Source0:	http://www.elektronikschule.de/~genannt/kacpi/download/%{name}-%{versio
 Patch0:		%{name}-desktop.patch
 URL:		http://www.elektronikschule.de/~genannt/kacpi/
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

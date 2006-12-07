@@ -13,9 +13,9 @@ URL:		http://www.elektronikschule.de/~genannt/kacpi/
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	kdelibs-devel >= 3.0
+BuildRequires:	libstdc++-devel
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 Kacpi is a laptop battery and CPU temperature monitor for Linux
@@ -40,9 +40,7 @@ laptopa, przeznaczony dla j±der zawieraj±cych obs³ugê ACPI. Cechy:
 %patch0 -p1
 
 %build
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-# no icon themes, *.png installed directly to icondir - so use pixmapsdir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 cp -f /usr/share/automake/config.* admin
 %configure
 
@@ -62,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc README AUTHORS
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
-%{_pixmapsdir}/*.png
+%{_iconsdir}/*.png
 %{_desktopdir}/*.desktop

@@ -41,6 +41,8 @@ laptopa, przeznaczony dla j±der zawieraj±cych obs³ugê ACPI. Cechy:
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
+# no icon themes, *.png installed directly to icondir - so use pixmapsdir
+kde_icondir="%{_pixmapsdir}"; export kde_icondir
 cp -f /usr/share/automake/config.* admin
 %configure
 
@@ -62,5 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
-%{_iconsdir}/*.png
+%{_pixmapsdir}/*.png
 %{_desktopdir}/*.desktop

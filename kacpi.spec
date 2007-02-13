@@ -1,5 +1,5 @@
 Summary:	Kacpi is a laptop battery and CPU temperature monitor
-Summary(pl.UTF-8):   Kacpi to program monitorujący temperaturę CPU oraz stan baterii laptopa
+Summary(pl.UTF-8):	Kacpi to program monitorujący temperaturę CPU oraz stan baterii laptopa
 Name:		kacpi
 Version:	0.6.3e
 Release:	4

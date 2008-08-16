@@ -2,13 +2,14 @@ Summary:	Kacpi is a laptop battery and CPU temperature monitor
 Summary(pl.UTF-8):	Kacpi to program monitorujący temperaturę CPU oraz stan baterii laptopa
 Name:		kacpi
 Version:	0.6.3e
-Release:	4
+Release:	5
 License:	GPL
 Vendor:		Jonas Genannt <jonasge@gmx.net>
 Group:		X11/Applications
 Source0:	http://www.elektronikschule.de/~genannt/kacpi/download/%{name}-%{version}.tar.bz2
 # Source0-md5:	4fca455edd54b9178711de04ffc8da12
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-gcc43.patch
 URL:		http://www.elektronikschule.de/~genannt/kacpi/
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -38,6 +39,7 @@ laptopa, przeznaczony dla jąder zawierających obsługę ACPI. Cechy:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir

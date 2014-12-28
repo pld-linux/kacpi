@@ -12,7 +12,7 @@ Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-gcc43.patch
 URL:		http://www.elektronikschule.de/~genannt/kacpi/
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
